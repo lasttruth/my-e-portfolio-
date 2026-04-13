@@ -1,6 +1,6 @@
-import React from 'react'
+import React from "react";
 
-function ProjectCard({ title, tech, description}) {
+function ProjectCard({ title, tech, description }) {
   return (
     <div className="card">
       <h3>{title}</h3>
@@ -10,4 +10,4 @@ function ProjectCard({ title, tech, description}) {
   );
 }
 
-export default ProjectCard
+export default ProjectCard;
