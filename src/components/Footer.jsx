@@ -1,6 +1,6 @@
 import React from "react";
 
-const Footer = () => {
+const Footer = ({ onEmailClick }) => {
   return (
     <footer className="max-w-4xl mx-auto px-6 py-16 text-center">
       {/* The Name as the Anchor */}
@@ -30,12 +30,12 @@ const Footer = () => {
         >
           LinkedIn
         </a>
-        <a
-          href="mailto:robindoirin@gmail.com"
+        <button
+          onClick={onEmailClick}
           className="text-slate-400 hover:text-cyan-400 transition-all text-xs font-medium"
         >
           Email
-        </a>
+        </button>
       </div>
     </footer>
   );

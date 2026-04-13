@@ -1,4 +1,5 @@
 import { useState } from "react";
+import ContactModal from "./components/ContractModal";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "./assets/vite.svg";
 import heroImg from "./assets/hero.png";
@@ -8,6 +9,11 @@ import Footer from "./components/Footer";
 import "./App.css";
 
 function App() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const openModal = () => {
+    console.log("Button was clicked!");
+    setIsModalOpen(true);
+  };
   return (
     <div className="bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-slate-900 via-slate-950 to-slate-950">
       <header className="flex flex-col items-center text-center py-20 px-4">
@@ -56,7 +62,11 @@ function App() {
           ))}
         </div>
       </section>
-      <Footer />
+      <Footer onEmailClick={openModal} />
+      <ContactModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </div>
   );
 }
