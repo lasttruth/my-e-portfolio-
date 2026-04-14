@@ -7,6 +7,7 @@ import ProjectCard from "./components/ProjectCard";
 import { projects } from "./constants";
 import Footer from "./components/Footer";
 import "./App.css";
+import Skills from "./components/Skills";
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -21,13 +22,13 @@ function App() {
           Robin Doirin
         </h1>
         <p className="text-xl text-slate-400 max-w-lg mt-6 leading-relaxed">
-          Frontend Software Engineer specializing in{" "}
-          <span className="text-white font-semibold">React</span>,
-          <span className="text-white font-semibold"> TypeScript</span>, and
+          Softwware Engineer specializing in{" "}
+          <span className="text-white font-semibold">Frontend</span>,
+          <span className="text-white font-semibold"> Game Systems</span>, and
           immersive web experiences.
         </p>
       </header>
-
+      <Skills />
       <section className="max-w-6xl mx-auto px-6 pb-24">
         <h2 className="text-sm uppercase tracking-[0.2em] text-slate-500 font-bold mb-12 text-center">
           Featured Projects
