@@ -30,6 +30,13 @@ const Footer = ({ onEmailClick }) => {
         >
           LinkedIn
         </a>
+        <a
+          href="/resume.pdf"
+          download="Robin_Doirin_Resume.pdf"
+          className="text-slate-400 hover:text-cyan-400 transition-all text-xs font-medium"
+        >
+          Resume
+        </a>
         <button
           onClick={onEmailClick}
           className="text-slate-400 hover:text-cyan-400 transition-all text-xs font-medium"
