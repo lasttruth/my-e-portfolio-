@@ -6,7 +6,8 @@ export const projects = [
     description:
       "An interactive tracker using XIVAPI to aggregate collectible data. Features dynamic filtering and state-managed search functionality.",
     tech: ["React", "REST API", "JavaScript"],
-    link: "https://github.com/lasttruth/ff14-project", // Update with your actual link later
+    link: "https://github.com/lasttruth/ff14-project",
+    image: "/assets/projects/ffxiv-tracker.gif",
   },
   {
     id: 2,
@@ -16,6 +17,7 @@ export const projects = [
       "A high-performance landing page integrated with Mailchimp API to automate lead generation for an eBay retail brand.",
     tech: ["Next.js", "TypeScript", "Tailwind CSS"],
     link: "https://github.com/lasttruth/newsletter-project",
+    image: "/assets/projects/focuscision-snapshot.png",
   },
   {
     id: 3,
@@ -25,5 +27,6 @@ export const projects = [
       "A pixel-perfect recreation of a modern SaaS landing page, focusing on responsive design and advanced CSS layouts.",
     tech: ["HTML", "CSS", "JavaScript"],
     link: "https://github.com/lasttruth/treact-clone",
+    image: "/assets/projects/Treact-clone.png",
   },
 ];

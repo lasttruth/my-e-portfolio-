@@ -2,49 +2,67 @@ import React from "react";
 import { motion } from "framer-motion";
 import { projects } from "../constants";
 
-function ProjectCard({ title, tech, description }) {
-  const fadeInUp = {
-    initial: { opacity: 0, y: 20 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6 },
-  };
+function ProjectCard() {
   const container = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2, // Each child waits 0.2s before starting
+        staggerChildren: 0.2,
       },
     },
   };
+
+  const item = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  };
+
   return (
     <section className="max-w-6xl mx-auto px-6 pb-24">
       <h2 className="text-sm uppercase tracking-[0.2em] text-slate-500 font-bold mb-12 text-center">
         Featured Projects
       </h2>
+
       <motion.div
-        variants={container} // This enables the stagger
+        variants={container}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: true, amount: 0.2 }}
-        className="grid grid-cols-1 md:grid-cols-2 gap-10 "
+        viewport={{ once: true, amount: 0.1 }}
+        className="grid grid-cols-1 md:grid-cols-2 gap-10"
       >
         {projects.map((project) => (
           <motion.div
             key={project.id}
-            className="bg-slate-900/40 border border-slate-800 p-8 rounded-3xl hover:border-cyan-500/50 transition-all duration-300 text-left hover:shadow-[0_0_30px_-10px_rgba(34,211,238,0.3)] hover:-translate-y-1"
+            variants={item}
+            className="group bg-slate-900/40 border border-slate-800 p-6 rounded-3xl hover:border-cyan-500/50 transition-all duration-300 text-left hover:shadow-[0_0_30px_-10px_rgba(34,211,238,0.3)] hover:-translate-y-1 flex flex-col justify-between"
           >
-            <h3 className="text-2xl font-bold text-white mb-1">
-              {project.title}
-            </h3>
-            <p className="text-cyan-400 text-xs font-black uppercase tracking-widest mb-4">
-              <strong>{project.subtitle}</strong>
-            </p>
-            <p className="text-slate-400 text-sm leading-relaxed mb-6">
-              {project.description}
-            </p>
+            <div>
+              {/* Image Banner Container */}
+              {project.image && (
+                <div className="w-full h-48 rounded-2xl overflow-hidden border border-slate-800/80 mb-6 bg-slate-950">
+                  <img
+                    src={project.image}
+                    alt={`${project.title} preview`}
+                    className="w-full h-full object-cover object-top transform group-hover:scale-105 transition-transform duration-500 ease-out opacity-85 group-hover:opacity-100"
+                  />
+                </div>
+              )}
 
-            <div className="flex flex-wrap gap-2">
+              <h3 className="text-2xl font-bold text-white mb-1">
+                {project.title}
+              </h3>
+
+              <p className="text-cyan-400 text-xs font-black uppercase tracking-widest mb-4">
+                <strong>{project.subtitle}</strong>
+              </p>
+
+              <p className="text-slate-400 text-sm leading-relaxed mb-6">
+                {project.description}
+              </p>
+            </div>
+
+            <div className="flex flex-wrap gap-2 mt-auto">
               {project.tech.map((tag) => (
                 <span
                   key={tag}
