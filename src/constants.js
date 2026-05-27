@@ -32,4 +32,32 @@ export const projects = [
     demoUrl: "https://robindoirin.com",
     image: "/assets/projects/Treact-clone.png",
   },
+  {
+    id: 4,
+    title: "GameHype Automation Bot",
+    subtitle: "Backend Service & API Architecture",
+    description:
+      "Engineered a highly responsive automation bot leveraging the Discord API and IGDB interface to track and announce global game release cycles. Designed an optimized, asynchronous polling scheduler to manage high-volume relational data queries seamlessly while strictly adhering to external rate-limiting policies.",
+    tech: [
+      "Node.js",
+      "Discord.js",
+      "IGDB API",
+      "REST Architecture",
+      "Asynchronous JS",
+    ],
+    codeUrl: "https://github.com/lasttruth/my-e-portfolio-",
+    demoUrl: "https://robindoirin.com",
+    image: "/assets/projects/gamehype-bot.jpg", // Placeholder for your bot preview asset
+  },
+  {
+    id: 5,
+    title: "Grid Matrix Puzzle Engine",
+    subtitle: "Game Systems & Algorithm Design",
+    description:
+      "Developed a high-performance prototype of a block-matching puzzle engine to benchmark complex game state logic. Authored modular grid matrix algorithms to handle dynamic block-shape checking, custom spatial tracking, and optimized line-clearing calculations with zero runtime memory allocation spikes.",
+    tech: ["Unity 6", "C#", "Game Systems Architecture", "Matrix Algorithms"],
+    codeUrl: "https://github.com/lasttruth/my-e-portfolio-",
+    demoUrl: "https://robindoirin.com",
+    image: "/assets/projects/puzzle-engine.gif", // Capture a looping GIF of your grid prototype!
+  },
 ];
