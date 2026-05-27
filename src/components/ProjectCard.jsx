@@ -60,17 +60,57 @@ function ProjectCard() {
               <p className="text-slate-400 text-sm leading-relaxed mb-6">
                 {project.description}
               </p>
+
+              {/* Technologies List */}
+              <div className="flex flex-wrap gap-2 mb-8">
+                {project.tech.map((tag) => (
+                  <span
+                    key={tag}
+                    className="px-3 py-1 text-[10px] font-bold bg-slate-800 text-slate-300 rounded-full"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
             </div>
 
-            <div className="flex flex-wrap gap-2 mt-auto">
-              {project.tech.map((tag) => (
-                <span
-                  key={tag}
-                  className="px-3 py-1 text-[10px] font-bold bg-slate-800 text-slate-300 rounded-full"
+            {/* Added: Action Buttons Container */}
+            <div className="flex items-center gap-4 mt-auto pt-4 border-t border-slate-800/50">
+              {project.demoUrl && (
+                <a
+                  href={project.demoUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-slate-900/60 text-slate-200 border border-slate-800 hover:border-cyan-500/50 hover:text-cyan-400 backdrop-blur-md transition-all text-xs font-medium shadow-md hover:shadow-cyan-500/5"
                 >
-                  {tag}
-                </span>
-              ))}
+                  Live Demo
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={2}
+                    stroke="currentColor"
+                    className="w-3.5 h-3.5"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+                    />
+                  </svg>
+                </a>
+              )}
+
+              {project.codeUrl && (
+                <a
+                  href={project.codeUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-xs font-medium text-slate-400 hover:text-cyan-400 transition-colors py-2"
+                >
+                  View Code
+                </a>
+              )}
             </div>
           </motion.div>
         ))}
